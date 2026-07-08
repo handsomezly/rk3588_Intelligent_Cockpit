@@ -1,0 +1,22 @@
+.page { min-height: 100vh; padding: 36rpx 32rpx 64rpx; background: #F7FAFC; color: #173042; }
+.eyebrow,
+.title,
+.subtitle { display: block; }
+.eyebrow { color: #5F7482; font-size: 19rpx; font-weight: 600; letter-spacing: 2rpx; }
+.title { margin-top: 8rpx; font-size: 44rpx; font-weight: 700; }
+.subtitle { margin-top: 12rpx; color: #5F7482; font-size: 25rpx; }
+.trip-card,
+.empty-card { margin-top: 28rpx; padding: 28rpx; border: 1rpx solid #E4ECEF; border-radius: 24rpx; background: #FFFFFF; box-shadow: 0 14rpx 38rpx rgba(23, 48, 66, 0.05); }
+.trip-head { display: flex; align-items: flex-start; justify-content: space-between; }
+.trip-date,
+.trip-range { display: block; }
+.trip-date { font-size: 29rpx; font-weight: 600; }
+.trip-range { margin-top: 8rpx; color: #5F7482; font-size: 23rpx; }
+.arrived-pill { min-height: 52rpx; padding: 0 18rpx; border-radius: 999rpx; color: #3B7D5C; background: #E7F4EB; font-size: 22rpx; line-height: 52rpx; }
+.trip-summary { display: block; margin-top: 24rpx; color: #526977; font-size: 25rpx; line-height: 1.7; }
+.mini-timeline { margin-top: 20rpx; padding-top: 12rpx; border-top: 1rpx solid #EDF2F4; }
+.event-row { display: flex; min-height: 56rpx; align-items: center; }
+.event-time { flex: 0 0 92rpx; color: #5F7482; font-size: 22rpx; font-variant-numeric: tabular-nums; }
+.event-title { color: #284554; font-size: 24rpx; }
+.empty-title { display: block; font-size: 29rpx; font-weight: 600; }
+.empty-copy { display: block; margin-top: 12rpx; color: #5F7482; font-size: 24rpx; line-height: 1.65; }

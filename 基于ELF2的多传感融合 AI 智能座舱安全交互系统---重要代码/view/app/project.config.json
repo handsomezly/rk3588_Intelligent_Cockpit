@@ -1,0 +1,15 @@
+{
+  "description": "ELF2 平安守护灯微信小程序",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "3.7.12",
+  "appid": "wx06150707ae5d49d6",
+  "projectname": "elf2-guardian-light",
+  "condition": {}
+}

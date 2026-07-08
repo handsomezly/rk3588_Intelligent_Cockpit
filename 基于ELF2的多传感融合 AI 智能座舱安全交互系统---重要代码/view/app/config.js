@@ -1,0 +1,6 @@
+module.exports = {
+  DEFAULT_BOARD_IP: '',
+  GUARDIAN_PORT: 8765,
+  HEARTBEAT_TIMEOUT_MS: 12000
+}
+

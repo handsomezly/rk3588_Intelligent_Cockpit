@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/guardian/guardian",
+    "pages/trips/trips"
+  ],
+  "window": {
+    "navigationBarTitleText": "平安守护",
+    "navigationBarBackgroundColor": "#F7FAFC",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F7FAFC",
+    "backgroundTextStyle": "light"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
+

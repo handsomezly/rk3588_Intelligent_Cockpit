@@ -1,0 +1,30 @@
+<view class="page">
+  <view class="intro">
+    <text class="eyebrow">SAFE JOURNEYS</text>
+    <text class="title">最近行程</text>
+    <text class="subtitle">只保留出发、提醒、恢复与到达</text>
+  </view>
+
+  <view wx:if="{{!trips.length}}" class="empty-card">
+    <text class="empty-title">还没有行程记录</text>
+    <text class="empty-copy">完成一次守护行程后，平安签会保存在这里。</text>
+  </view>
+
+  <view wx:for="{{trips}}" wx:key="tripId" class="trip-card">
+    <view class="trip-head">
+      <view>
+        <text class="trip-date">{{item.startText}}</text>
+        <text class="trip-range">{{item.durationText}} · {{item.alertCount}} 次提醒</text>
+      </view>
+      <view class="arrived-pill">已到达</view>
+    </view>
+    <text class="trip-summary">{{item.summary}}</text>
+    <view class="mini-timeline">
+      <view wx:for="{{item.timeline}}" wx:for-item="event" wx:key="eventId" class="event-row">
+        <text class="event-time">{{event.timeText}}</text>
+        <text class="event-title">{{event.title}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+

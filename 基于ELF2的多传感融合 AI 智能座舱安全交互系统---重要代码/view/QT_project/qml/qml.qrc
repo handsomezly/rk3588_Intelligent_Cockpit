@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ImuPage.qml</file>
+        <file>assets/fonts/materialdesignicons-webfont.ttf</file>
+    </qresource>
+</RCC>

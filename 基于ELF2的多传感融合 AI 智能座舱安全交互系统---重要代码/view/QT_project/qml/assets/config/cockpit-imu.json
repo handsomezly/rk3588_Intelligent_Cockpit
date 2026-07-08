@@ -1,0 +1,20 @@
+{
+    "axis_map": {
+        "forward": "+x",
+        "left": "+y",
+        "up": "+z"
+    },
+    "calibration": {
+        "samples": 20
+    },
+    "events": {
+        "hard_brake_g": -0.35,
+        "hard_acceleration_g": 0.30,
+        "hard_turn_g": 0.30,
+        "bump_g": 0.45,
+        "vibration_rms_g": 0.18,
+        "impact_g": 2.50,
+        "rollover_deg": 45.0,
+        "mounting_deg": 8.0
+    }
+}

@@ -1,0 +1,73 @@
+<view class="page mode-{{mode}}">
+  <view class="top-row">
+    <view>
+      <text class="eyebrow">ELF2 FAMILY SAFETY</text>
+      <text class="page-title">平安守护</text>
+    </view>
+    <button class="connection-pill {{connectionLabel === '已连接' ? 'online' : ''}}" bindtap="openConnectionSheet">
+      <view class="connection-dot"></view>
+      <text>{{connectionLabel}}</text>
+    </button>
+  </view>
+
+  <view class="guardian-hero">
+    <view class="guardian-orbit orbit-back"></view>
+    <view class="guardian-orbit orbit-front"><view class="orbit-dot"></view></view>
+    <view class="guardian-core">
+      <view class="shield-shape">
+        <text wx:if="{{mode === 'warning'}}" class="state-glyph">!</text>
+        <text wx:elif="{{mode === 'arrived'}}" class="state-glyph check">✓</text>
+        <text wx:elif="{{mode === 'offline'}}" class="state-glyph">×</text>
+        <text wx:else class="state-glyph heart">♡</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="status-copy">
+    <text wx:if="{{mode === 'idle'}}" class="status-title">待出发</text>
+    <text wx:elif="{{mode === 'guarding'}}" class="status-title">守护中</text>
+    <text wx:elif="{{mode === 'warning'}}" class="status-title">需要关注</text>
+    <text wx:elif="{{mode === 'recovered'}}" class="status-title">已恢复</text>
+    <text wx:elif="{{mode === 'arrived'}}" class="status-title">平安到达</text>
+    <text wx:else class="status-title">连接暂时中断</text>
+    <text class="status-subtitle">{{statusSubtitle}}</text>
+  </view>
+
+  <view wx:if="{{timeline.length}}" class="timeline-card">
+    <view wx:for="{{timeline}}" wx:key="eventId" class="timeline-row">
+      <view class="timeline-marker {{item.tone}}"></view>
+      <text class="timeline-time">{{item.timeText}}</text>
+      <view class="timeline-copy">
+        <text class="timeline-title">{{item.title}}</text>
+        <text wx:if="{{item.type === 'alert'}}" class="timeline-summary">{{item.summary}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{mode === 'warning'}}" class="alert-actions">
+    <text class="alert-note">{{latestAlert.summary || '状态持续监测中'}}</text>
+    <button class="ack-button {{acknowledged ? 'done' : ''}}" bindtap="acknowledgeAlert">
+      {{acknowledged ? '已确认收到' : '已收到提醒'}}
+    </button>
+  </view>
+
+  <view wx:if="{{mode === 'arrived'}}" class="safe-card">
+    <view class="safe-card-head">
+      <view class="safe-icon">✓</view>
+      <text class="safe-title">今日平安签</text>
+    </view>
+    <text class="safe-summary">{{trip.summary}}</text>
+  </view>
+
+  <button wx:if="{{hasTrips}}" class="trips-link" bindtap="openTrips">查看最近行程</button>
+
+  <view wx:if="{{showConnectionSheet}}" class="sheet-mask" bindtap="closeConnectionSheet"></view>
+  <view wx:if="{{showConnectionSheet}}" class="connection-sheet">
+    <view class="sheet-handle"></view>
+    <text class="sheet-title">连接 ELF2</text>
+    <text class="sheet-help">输入开发板在当前手机热点中的 IP 地址</text>
+    <input class="address-input" value="{{addressInput}}" placeholder="例如 192.168.43.2" bindinput="onAddressInput" />
+    <button class="connect-button" bindtap="saveConnection">保存并连接</button>
+  </view>
+</view>
+
